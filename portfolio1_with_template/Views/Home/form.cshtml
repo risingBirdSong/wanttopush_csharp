@@ -1,0 +1,30 @@
+﻿
+@{
+        ViewData["Title"] = "form";
+}
+@model portfolio1_with_template.Models.formModel
+
+
+<h1>form</h1>
+
+<form class="form-control" asp-controller="Home" asp-action="result" method="post">
+    <label asp-for="Name"></label>
+    <input class="form-control" asp-for="Name" />
+
+    <label asp-for="myLocations"></label>
+
+    <select class="form-control" asp-for="myLocations" asp-items="Html.GetEnumSelectList<myLocations>()">
+        <option value="value">pick a location</option>
+    </select>
+
+    <label asp-for="Languages"></label>
+
+    <select class="form-control" asp-for="Languages" asp-items="Html.GetEnumSelectList<Languages>()">
+        <option value="value">pick a language</option>
+    </select>
+
+    <label asp-for="Comment"></label>
+    <textarea class="form-control" asp-for="Comment"></textarea>
+
+    <button class="form-control" type="submit">submit me</button>
+</form>
