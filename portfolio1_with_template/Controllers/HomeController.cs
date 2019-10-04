@@ -32,6 +32,10 @@ namespace portfolio1_with_template.Controllers
         {
             return View();
         }
+        [HttpGet("datetime")]
+        public IActionResult Datetime() {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
