@@ -23,7 +23,7 @@ namespace portfolio1_with_template.Controllers
         }
 
         [HttpGet("contacts")]
-        public IActionResult Contacts()
+        public ViewResult Contacts()
         {
             return View();
         }
