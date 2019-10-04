@@ -27,6 +27,11 @@ namespace portfolio1_with_template.Controllers
         {
             return View();
         }
+        [HttpGet("razorfun")]
+        public IActionResult Razorfun()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

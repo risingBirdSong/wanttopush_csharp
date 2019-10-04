@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "razorfun";
+}
+
+<h1>razorfun</h1>
+
+@{
+    var recipes = new List<string>
+    {
+      "curry",
+      "soup",
+      "stew"
+    };
+    foreach (var recipe in recipes) {
+    <p>@recipe</p>        
+    }
+}
+
+
