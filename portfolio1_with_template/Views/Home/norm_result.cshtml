@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "norm_result";
+
+}
+@model portfolio1_with_template.Models.form_norm 
+
+<h1>norm_result</h1>
+<h2 class="form-control"> name : @Model.Name </h2>
+<h2 class="form-control"> location : @Model.Location.FirstOrDefault() </h2>
+<h2 class="form-control"> fave language : @Model.FavoriteLanguage.FirstOrDefault() </h2>
+<h2 class="form-control"> comment : @Model.Comment </h2>
+
