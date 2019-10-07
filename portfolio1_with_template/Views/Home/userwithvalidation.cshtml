@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "userwithvalidation";
+}
+@model portfolio1_with_template.Models.user_with_validation
+
+
+<h1>userwithvalidation</h1>
+
+<form class="form-control" method="post" asp-controller="Home" asp-action="handlevalidationform" >
+    <span asp-validation-for="firstName"></span>
+    <label asp-for="firstName"></label>
+    <input class="form-control"  asp-for="firstName" />
+
+    <span asp-validation-for="lastName"></span>
+    <label  asp-for="lastName"></label>
+    <input class="form-control" asp-for="lastName" />
+    
+    <span asp-validation-for="age"></span>
+    <label asp-for="age"></label>
+    <input class="form-control" asp-for="age" />
+
+    <span asp-validation-for="email"></span>
+    <label asp-for="email"></label>
+    <input class="form-control" asp-for="email" />
+
+    <span asp-validation-for="password"></span>
+    <label asp-for="password"></label>
+    @Html.Password("password")
+    <input type="submit" name="mysubmit" value="submitme" />
+</form>
+

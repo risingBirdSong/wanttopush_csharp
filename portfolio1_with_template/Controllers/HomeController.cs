@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using portfolio1_with_template.Models;
 
+
 namespace portfolio1_with_template.Controllers
 {
+    public enum myurls
+    {
+        userwithvalidation,
+    }
     public class HomeController : Controller
     {
         [HttpGet("")]
@@ -49,6 +54,9 @@ namespace portfolio1_with_template.Controllers
             return View(myForm);
       
     }
+
+        
+
         [HttpPost("form_norm")]
         [ValidateAntiForgeryToken]
 
@@ -58,6 +66,29 @@ namespace portfolio1_with_template.Controllers
             return View(postedForm);
         }
 
+
+        [HttpGet("userwithvalidation")]
+        public IActionResult userwithvalidation()
+        {
+            var myForm = new user_with_validation();
+            return View(myForm);
+        }
+        [HttpPost("handlevalidationform")]
+        public IActionResult handlevalidationform(user_with_validation form) {
+            if (ModelState.IsValid)
+            {
+                //todo
+                return RedirectToAction("displayValidUserInfo", form);
+            }
+            else {
+                return View("userwithvalidation");
+            }
+        }
+
+        public IActionResult displayValidUserInfo(user_with_validation data)
+        {
+            return View(data);
+        }
 
     [HttpGet("form")]
     public IActionResult Form()
