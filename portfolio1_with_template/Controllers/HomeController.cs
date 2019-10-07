@@ -46,11 +46,8 @@ namespace portfolio1_with_template.Controllers
         [HttpGet("form_norm")]
         public IActionResult form_norm()
         {
-            var locations = new List<string> { "Vancouver", "Portland", "Spokane" };
-            var languages = new List<string> { "french", "english", "german" };
+ 
             var myForm = new form_norm();
-            myForm.Location = locations;
-            myForm.FavoriteLanguage = languages;
             return View(myForm);
       
     }
@@ -62,8 +59,17 @@ namespace portfolio1_with_template.Controllers
 
         public IActionResult norm_result(form_norm postedForm)
         {
+            if (ModelState.IsValid)
+            {
 
-            return View(postedForm);
+                return View(postedForm);
+            }
+            else {
+                var myForm = new form_norm();
+
+                return View("form_norm",myForm);
+            }
+
         }
 
 
